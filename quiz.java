@@ -3,6 +3,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/* 
+Create the interface*/
+
 class OnlineTest1 extends JFrame implements ActionListener
 {
 	JLabel label;
@@ -38,8 +41,9 @@ class OnlineTest1 extends JFrame implements ActionListener
 		setLocation(250,100);
 		setVisible(true);
 		setSize(600,350);
-	}
-
+    }
+    /* 
+Add Action Listener to go to the next question when next is pressed*/
 public void actionPerformed(ActionEvent e)
 {
     if(e.getSource()==b1)
@@ -51,7 +55,8 @@ public void actionPerformed(ActionEvent e)
     }
 }
  
-
+/* 
+Input the Questions and Answers*/
 
 void set()
 {
@@ -110,7 +115,33 @@ void set()
     for(int i=0,j=0;i<=90;i+=30,j++)
         option[j].setBounds(50,80+i,200,20);
 }
-	
+	/* 
+    Input the correct answers*/
+
+    boolean check()
+	{
+		if(current==0)
+			return(option[1].isSelected());
+		if(current==1)
+			return(option[2].isSelected());
+		if(current==2)
+			return(option[3].isSelected());
+		if(current==3)
+			return(option[0].isSelected());
+		if(current==4)
+			return(option[2].isSelected());
+		if(current==5)
+			return(option[2].isSelected());
+		if(current==6)
+			return(option[1].isSelected());
+		if(current==7)
+			return(option[3].isSelected());
+		if(current==8)
+			return(option[1].isSelected());
+		if(current==9)
+			return(option[2].isSelected());
+		return false;
+	}
 	public static void main(String s[])
 	{
 		
